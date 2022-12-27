@@ -1,0 +1,89 @@
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<th:block th:fragment="modalUpdate">
+  <div id="modalUpdateProduct" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
+    <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Product information</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div id="modal-alert-danger-up" class="hide mb-3"></div>
+          <form id="frmUpdate" enctype="multipart/form-data">
+            <input id="idUpdate" hidden>
+            <fieldset class="row g-3">
+              <div class="form-group row">
+                <div class="col-6">
+                  <label class="col-sm-12 col-form-label">Name</label>
+                  <div class="col-sm-12">
+                    <input type="text" id="productNameUp" name="productNameUp" class="form-control" />
+                  </div>
+                </div>
+                <div class="col-6">
+                  <label class="col-sm-12 col-form-label">Price</label>
+                  <div class="col-sm-12">
+                    <input type="text" id="productPriceUp" name="productPriceUp" class="form-control" />
+                  </div>
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-6">
+                  <label class="col-sm-12 col-form-label">Description</label>
+                  <div class="col-sm-12">
+                    <input type="text" class="form-control" id="descriptionUp" name="descriptionUp" />
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="col-sm-12">
+                    <label class="col-sm-12 col-form-label">Color</label>
+                    <select name="productColorUp" id="productColorUp" class="form-control">
+                      <!--                        <option>Color</option>-->
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-6">
+                  <div class="col-sm-12">
+                    <label class="col-sm-12 col-form-label">Size</label>
+                    <select name="productSizeUp" id="productSizeUp" class="form-control">
+                      <!--                        <option>Size</option>-->
+                    </select>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="col-sm-12">
+                    <label class="col-sm-12 col-form-label">Category</label>
+                    <select name="productCategoryUp" id="productCategoryUp" class="form-control">
+                      <!--                        <option>Category</option>-->
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <!--                <input type="file" id="imageFile" accept="image/jpeg, image/png" />-->
+                <div class="container">
+                  <div class="preview">
+                    <img id="img-preview-up" class="editImg" src="" />
+                    <label class="labelUpImg" for="file-input-up">Upload Image</label>
+                    <input accept="image/*" type="file" id="file-input-up" class="imageFile"/>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" id="btnUpdateProduct" class="btn btn-outline-primary">
+                <i class="fa fa-plus" aria-hidden="true"></i>
+                Update product
+              </button>
+            </div>
+          </form>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</th:block>

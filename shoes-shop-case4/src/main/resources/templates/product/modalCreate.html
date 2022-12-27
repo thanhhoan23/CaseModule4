@@ -1,0 +1,91 @@
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<th:block th:fragment="modalCreate">
+  <div id="modalCreateProduct" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
+    <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable" style="height: 500px">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Product information</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div id="modal-alert-danger" class="hide mb-3"></div>
+          <form id="frmCrProduct" enctype="multipart/form-data">
+            <fieldset class="row g-3">
+                <div class="form-group row">
+                  <div class="col-6">
+
+                    <label class="col-sm-12 col-form-label">Name</label>
+                    <div class="col-sm-12">
+                      <input type="text" id="productNameCr" name="productNameCr" class="form-control" />
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <label class="col-sm-12 col-form-label">Price</label>
+                    <div class="col-sm-12">
+                      <input type="text" id="productPriceCr" name="productPriceCr" class="form-control" />
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <div class="col-6">
+                    <label class="col-sm-12 col-form-label">Description</label>
+                    <div class="col-sm-12">
+                      <input type="text" class="form-control" id="descriptionCr" name="descriptionCr" />
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="col-sm-12">
+                      <label class="col-sm-12 col-form-label">Color</label>
+                      <select name="productColorCr" id="productColorCr" class="form-control">
+<!--                        <option>Color</option>-->
+                      </select>
+                    </div>
+                  </div>
+
+                </div>
+
+                <div class="form-group row">
+                  <div class="col-6">
+                    <div class="col-sm-12">
+                      <label class="col-sm-12 col-form-label">Size</label>
+                      <select name="productSizeCr" id="productSizeCr" class="form-control">
+<!--                        <option>Size</option>-->
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="col-sm-12">
+                      <label class="col-sm-12 col-form-label">Category</label>
+                      <select name="productCategoryCr" id="productCategoryCr" class="form-control">
+<!--                        <option>Category</option>-->
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              <div>
+<!--                <input type="file" id="imageFile" accept="image/jpeg, image/png" />-->
+                  <div class="container">
+                      <div class="preview">
+                          <img id="img-preview" src="https://i.pinimg.com/originals/22/ca/3f/22ca3f947c9d0905ded5d3f96195b5d0.jpg" />
+
+                          <label class="labelUpImg" for="file-input">Upload Image</label>
+                          <input accept="image/*" type="file" id="file-input" class="imageFile"/>
+                      </div>
+                  </div>
+              </div>
+            </fieldset>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" id="btnCreateProduct" class="btn btn-outline-primary">
+            <i class="fa fa-plus" aria-hidden="true"></i>
+            Create product
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</th:block>
