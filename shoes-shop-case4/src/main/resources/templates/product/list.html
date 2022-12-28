@@ -216,8 +216,11 @@
                     <img style="width:40%" src="${item.fileUrl}" alt="" />
                 </td>
                 <td>${item.title}</td>
-<!--                <td><fmt:formatNumber pattern="#,##0" value="${item.price}" /></td>-->
-                <td>${item.price}</td>
+                <td>
+                ${new Intl.NumberFormat('vi-VN', {style: 'currency', currency: 'VND'}).format(item.price)}
+
+                </td>
+<!--                <td>${item.price}</td>-->
                 <td>${item.quantity}</td>
                 <td>${item.description}</td>
                 <td>${item.color}</td>
@@ -329,10 +332,12 @@
             console.log(data)
             let str = renderProduct(data);
             page.elements.tbProductBody.prepend(str);
+            page.dialogs.elements.frmCrProduct[0].reset();
 
             AppBase.showSuccessAlert(AppBase.AlertMessageEn.SUCCESS_CREATED);
-
             page.dialogs.elements.modalCreateProduct.modal('hide');
+            $("#img-preview").attr("src", "https://i.pinimg.com/originals/22/ca/3f/22ca3f947c9d0905ded5d3f96195b5d0.jpg")
+
         }).fail((jqXHR) => {
             // page.dialogs.elements.renderErrorCre.append(AppBase.renderErrorCre(jqXHR.responseJSON));
             page.dialogs.elements.modalCreateProduct.modal('hide');
@@ -449,12 +454,12 @@
 
             page.dialogs.elements.modalCreateProduct.modal('hide');
         }).fail((err) => {
+            page.dialogs.elements.modalCreateProduct.modal('hide');
             AppBase.showErrorAlert(AppBase.AlertMessageEn.ERROR_400);
         }).always(function () {
             page.dialogs.elements.btnCreateProduct.prop("disabled", false);
         });
     }
-
 
     page.dialogs.elements.frmUpdate.validate({
         rules: {

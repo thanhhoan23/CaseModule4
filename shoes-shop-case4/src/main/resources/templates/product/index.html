@@ -958,7 +958,10 @@
 
   <div class="card-body">
     <h5 class="card-title">${item.title}</h5>
-    <p class="card-text">${item.price}</p>
+    <p class="card-text">
+                ${new Intl.NumberFormat('vi-VN', {style: 'currency', currency: 'VND'}).format(item.price)}
+
+                </p>
     <button class="btn btn-primary">Add Cart</button>
   </div>
 </div>`

@@ -48,7 +48,6 @@ public class ProductAPI {
 
     @GetMapping
     public ResponseEntity<?> getAllProducts() {
-
 //        List<ProductResponseDto> productResponseDTOS = productService.findAllProduct();
         List<ProductResponseDto> productList = productService.findAllProductDeleteFalse();
 
@@ -89,7 +88,6 @@ public class ProductAPI {
 
         return new ResponseEntity<>(productResponseDto, HttpStatus.OK);
     }
-//    }
 
 
     @GetMapping("/size")
